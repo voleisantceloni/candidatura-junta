@@ -1,0 +1,259 @@
+:root {
+  --color-white: #fff;
+  --color-light: #f2f2f2;
+  --color-light-gray: #e0e0e0;
+  --color-gray: #6c757d;
+  --color-dark-gray: #343a40;
+  --color-dark: #2b2d42;
+  --color-black: #000;
+
+  --color-lightest-primary: #ffe3e6;
+  --color-lighter-primary: #f7a6ae;
+  --color-light-primary: #d65a65;
+  --color-primary: #c1313d;
+  --color-dark-primary: #a12235;
+  --color-darker-primary: #7f1121;
+  --color-darkest-primary: #5c020f;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-dark);
+  line-height: 1.7;
+  background: var(--color-white);
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  background: linear-gradient(135deg, var(--color-darkest-primary), var(--color-darker-primary), var(--color-dark-primary));
+  color: var(--color-white);
+  text-align: center;
+  padding: 80px 0 64px;
+}
+
+.header-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-lighter-primary);
+  margin-bottom: 24px;
+}
+
+.header-title {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.header-presentation {
+  font-size: 1.125rem;
+  color: var(--color-lighter-primary);
+  font-weight: 400;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 72px 0;
+}
+
+.section--light {
+  background: var(--color-light);
+}
+
+.section--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--color-dark-primary);
+}
+
+.section-title--light {
+  color: var(--color-white);
+}
+
+.section-text {
+  font-size: 1.0625rem;
+  max-width: 680px;
+}
+
+.section-text--light {
+  color: var(--color-white);
+}
+
+.section-text + .section-text {
+  margin-top: 16px;
+}
+
+.section-note {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  color: var(--color-gray);
+}
+
+/* ---------- Team Table ---------- */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.team-table {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+  font-size: 1.0625rem;
+}
+
+.team-table th {
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--color-dark-primary);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.team-table th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.team-table th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.team-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.team-table tbody tr:hover {
+  background: var(--color-lightest-primary);
+}
+
+/* ---------- Cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-light-gray);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 24px rgba(193, 49, 61, 0.1);
+  border-color: var(--color-lighter-primary);
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark-primary);
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--color-dark-gray);
+  line-height: 1.65;
+}
+
+/* ---------- QR ---------- */
+
+.qr-placeholder {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.qr-box {
+  width: 140px;
+  height: 140px;
+  background: var(--color-white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-dark-primary);
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-link {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: var(--color-lightest-primary);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  background: var(--color-dark);
+  color: var(--color-light-gray);
+  text-align: center;
+  padding: 48px 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.footer p + p {
+  margin-top: 16px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .header {
+    padding: 56px 0 44px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
