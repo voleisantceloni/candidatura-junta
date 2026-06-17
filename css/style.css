@@ -77,16 +77,11 @@ body {
 
 .section {
   padding: 72px 0;
+  scroll-margin-top: 60px;
 }
 
 .section--light {
   background: var(--color-light);
-}
-
-.section--primary {
-  background: var(--color-primary);
-  color: var(--color-white);
-  text-align: center;
 }
 
 .section-title {
@@ -96,17 +91,9 @@ body {
   color: var(--color-dark-primary);
 }
 
-.section-title--light {
-  color: var(--color-white);
-}
-
 .section-text {
   font-size: 1.0625rem;
   max-width: 680px;
-}
-
-.section-text--light {
-  color: var(--color-white);
 }
 
 .section-text + .section-text {
@@ -157,74 +144,261 @@ body {
   background: var(--color-lightest-primary);
 }
 
-/* ---------- Cards ---------- */
+/* ---------- Principles (Filosofia) ---------- */
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.card {
+.principle {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.principle-marker {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-lightest-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.principle-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-dark-primary);
+  margin-bottom: 4px;
+}
+
+.principle p {
+  font-size: 0.95rem;
+  color: var(--color-dark-gray);
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+/* ---------- Pillars (Construir) ---------- */
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pillar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
   background: var(--color-white);
   border-radius: 12px;
-  padding: 32px 24px;
+  padding: 20px 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--color-light-gray);
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-.card:hover {
+.pillar:hover {
   box-shadow: 0 4px 24px rgba(193, 49, 61, 0.1);
   border-color: var(--color-lighter-primary);
 }
 
-.card-title {
-  font-size: 1.15rem;
+.pillar-number {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.pillar-title {
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-dark-primary);
+  margin-bottom: 2px;
+}
+
+.pillar p {
+  font-size: 0.9rem;
+  color: var(--color-dark-gray);
+  line-height: 1.6;
+}
+
+/* ---------- Sticky Nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-darkest-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link {
+  color: var(--color-lighter-primary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link--highlight {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.nav-link--highlight:hover {
+  background: var(--color-light-primary);
+}
+
+/* ---------- Section subtitle ---------- */
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--color-gray);
+  margin-top: -16px;
+  margin-bottom: 32px;
+  max-width: 680px;
+}
+
+/* ---------- Subsection ---------- */
+
+.subsection-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark-primary);
+  margin-top: 36px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--color-lighter-primary);
+  border-radius: 1px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding-bottom: 28px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 3px solid var(--color-light);
+  justify-self: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-light-gray);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 4px 24px rgba(193, 49, 61, 0.1);
+  border-color: var(--color-lighter-primary);
+}
+
+.timeline-number {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-dark-primary);
+  margin-bottom: 2px;
+}
+
+.timeline-period {
+  font-size: 0.85rem;
+  color: var(--color-gray);
   margin-bottom: 12px;
 }
 
-.card p {
+.timeline-card p {
   font-size: 0.95rem;
   color: var(--color-dark-gray);
   line-height: 1.65;
 }
 
-/* ---------- QR ---------- */
+/* ---------- Footer signature ---------- */
 
-.qr-placeholder {
-  display: flex;
-  justify-content: center;
-  margin: 32px 0;
-}
-
-.qr-box {
-  width: 140px;
-  height: 140px;
-  background: var(--color-white);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-dark-primary);
-  letter-spacing: 0.1em;
-}
-
-/* ---------- Contact ---------- */
-
-.contact-link {
-  color: var(--color-white);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s;
-}
-
-.contact-link:hover {
-  color: var(--color-lightest-primary);
+.footer-signature {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--color-gray);
 }
 
 /* ---------- Footer ---------- */
@@ -253,7 +427,24 @@ body {
     padding: 48px 0;
   }
 
-  .cards {
-    grid-template-columns: 1fr;
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .principle-marker {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .pillar {
+    padding: 16px 16px;
+  }
+
+  .pillar-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
   }
 }
